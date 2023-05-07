@@ -1,5 +1,6 @@
 package com.sibau.demo.controller;
 
+import com.sibau.demo.dto.ProductDto;
 import com.sibau.demo.model.Product;
 import com.sibau.demo.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,12 +19,13 @@ public class ProductController {
      * @return
      */
     @GetMapping("/products")
-    public List<Product> getProducts() {
+    public List<ProductDto> getProducts() {
         return productService.getProducts();
     }
     @PostMapping("/saveProduct")
-    public Product saveProduct(@RequestBody Product product) {
+    public Product saveProduct(@RequestBody Product product){
         return productService.saveProduct(product);
     }
+
 
 }
